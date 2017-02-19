@@ -16,7 +16,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
-
+//test
 public class ReaderActivity extends AppCompatActivity {
     private Button scan_btn;
 
