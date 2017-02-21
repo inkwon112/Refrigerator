@@ -31,16 +31,15 @@ public class ItemListActivity extends AppCompatActivity {
             db = helper.getReadableDatabase(); // Read전용으로 오픈
         }
 
-
-        c = db.rawQuery("SELECT * FROM ITEM", null); // item 테이블의 배열을 커서 c로 넘김
+        // ITEM 테이블에서 모든 레코드를 retrieve
+        c = db.rawQuery("SELECT * FROM ITEM", null);
         c.moveToFirst();
 
         if(c != null) {
-            // startManagingCursor(c); //액티비티가 커서를 관리
             String[] columns = {"name", "start", "finish"};
             int[] resIds = {R.id.text01, R.id.text02, R.id.text03};
-            //리턴된 커서의 컬럼과 listitem.xml에서 준비된 리소스아이디와 연결(매칭)
-            //public SimpleCursorAdapter (Context context, int layout, Cursor c, String[] from, int[] to)
+            // SimpleCursorAdapter 객체 생성
+            // 리턴된 커서의 컬럼과 listitem.xml에서 준비된 리소스아이디와 연결(매칭)
             SimpleCursorAdapter adapter
                     = new SimpleCursorAdapter(getApplicationContext(), R.layout.listitem, c, columns, resIds);
 

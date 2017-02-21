@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ import static com.example.in_kwonpark.qrcode.R.id.itemlist_btn;
 public class ReaderActivity extends AppCompatActivity {
     private Button scan_btn;
     private Button itemlist_btn;
+    private Button shopping_btn;
     private DBHelper helper;
     private SQLiteDatabase db;
     private Cursor c; // Cursor c 생성.(커서는 기본적으로 행(Row) 값을 참조 함)
@@ -33,6 +35,7 @@ public class ReaderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_reader);
         scan_btn = (Button) findViewById(R.id.scan_btn);
         itemlist_btn = (Button) findViewById(R.id.itemlist_btn);
+        shopping_btn = (Button) findViewById(R.id.shopping_btn);
         final Activity activity = this;
 
 
@@ -68,6 +71,14 @@ public class ReaderActivity extends AppCompatActivity {
             }
         });
 
+        shopping_btn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://emart.ssg.com/")));
+            }
+        });
+
+
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
@@ -86,7 +97,6 @@ public class ReaderActivity extends AppCompatActivity {
                 String Name = ItemValues[0]; // 상품명을 가리키는 Name
                 String Start = ItemValues[1]; // 제조일자를 가리키는 Start
                 String Finish = ItemValues[2]; // 유통기한을 가리키는 Finish
-
 
                 db.execSQL("insert into item values(null, '"+Name+"','"+Start+"','"+ Finish+"' );");
 

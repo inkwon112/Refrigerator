@@ -21,7 +21,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Shopping"
+        android:text="쇼핑하기"
         android:id="@+id/shopping_btn"
         android:layout_alignBaseline="@+id/shoppinglist_btn"
         android:layout_alignBottom="@+id/shoppinglist_btn"
@@ -30,19 +30,8 @@
 
     <Button
         android:layout_width="wrap_content"
-        android:text="QR Code"
-        android:id="@+id/scan_btn"
-        android:layout_marginTop="91dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginEnd="30dp"
-        android:layout_below="@+id/textView2"
-        android:layout_toLeftOf="@+id/shopping_btn"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Item List"
+        android:text="식자재 목록"
         android:id="@+id/itemlist_btn"
         android:layout_marginRight="49dp"
         android:layout_marginEnd="49dp"
@@ -53,13 +42,23 @@
 
     <Button
         android:layout_width="wrap_content"
+        android:text="제품 입력"
+        android:id="@+id/scan_btn"
         android:layout_height="wrap_content"
-        android:text="Shopping List"
+        android:layout_marginTop="46dp"
+        android:layout_below="@+id/textView2"
+        android:layout_alignLeft="@+id/shoppinglist_btn"
+        android:layout_alignStart="@+id/shoppinglist_btn" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="쇼핑 목록"
         android:id="@+id/shoppinglist_btn"
-        android:layout_marginTop="103dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginEnd="24dp"
         android:layout_below="@+id/scan_btn"
-        android:layout_alignRight="@+id/scan_btn"
-        android:layout_alignEnd="@+id/scan_btn"
-        android:layout_marginRight="13dp"
-        android:layout_marginEnd="13dp" />
+        android:layout_toLeftOf="@+id/shopping_btn"
+        android:layout_toStartOf="@+id/shopping_btn"
+        android:layout_marginTop="37dp" />
 </RelativeLayout>
