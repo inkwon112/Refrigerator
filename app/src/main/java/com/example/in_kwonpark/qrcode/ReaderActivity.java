@@ -16,10 +16,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+
+import static com.example.in_kwonpark.qrcode.R.id.itemlist_btn;
+
 //test
 public class ReaderActivity extends AppCompatActivity {
     private Button scan_btn;
-
+    private Button itemlist_btn;
     private DBHelper helper;
     private SQLiteDatabase db;
     private Cursor c; // Cursor c 생성.(커서는 기본적으로 행(Row) 값을 참조 함)
@@ -29,7 +32,9 @@ public class ReaderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reader);
         scan_btn = (Button) findViewById(R.id.scan_btn);
+        itemlist_btn = (Button) findViewById(R.id.itemlist_btn);
         final Activity activity = this;
+
 
         helper = new DBHelper(this);
         // DBHelper 객체를 이용하여 DB 생성 -> DBHelper.java에 있는 onCreate() 자동 실행
@@ -54,6 +59,15 @@ public class ReaderActivity extends AppCompatActivity {
                 integrator.initiateScan();
             }
         });
+
+        itemlist_btn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ReaderActivity.this, ItemListActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
@@ -87,7 +101,6 @@ public class ReaderActivity extends AppCompatActivity {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
-
     protected void onDestroy() {
         super.onDestroy();
         c.close();

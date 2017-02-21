@@ -21,40 +21,45 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Shopping List"
-        android:id="@+id/shoppinglist_btn"
-        android:layout_marginTop="102dp"
-        android:layout_below="@+id/scan_btn"
-        android:layout_alignLeft="@+id/scan_btn"
-        android:layout_alignStart="@+id/scan_btn" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="QR Code"
-        android:id="@+id/scan_btn"
-        android:layout_marginTop="85dp"
-        android:layout_below="@+id/textView2"
-        android:layout_toLeftOf="@+id/textView2"
-        android:layout_toStartOf="@+id/textView2" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Item List"
-        android:id="@+id/itemlist_btn"
-        android:layout_alignBaseline="@+id/scan_btn"
-        android:layout_alignBottom="@+id/scan_btn"
-        android:layout_toRightOf="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Shopping"
         android:id="@+id/shopping_btn"
         android:layout_alignBaseline="@+id/shoppinglist_btn"
         android:layout_alignBottom="@+id/shoppinglist_btn"
         android:layout_alignRight="@+id/itemlist_btn"
         android:layout_alignEnd="@+id/itemlist_btn" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:text="QR Code"
+        android:id="@+id/scan_btn"
+        android:layout_marginTop="91dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_below="@+id/textView2"
+        android:layout_toLeftOf="@+id/shopping_btn"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Item List"
+        android:id="@+id/itemlist_btn"
+        android:layout_marginRight="49dp"
+        android:layout_marginEnd="49dp"
+        android:layout_alignBaseline="@+id/scan_btn"
+        android:layout_alignBottom="@+id/scan_btn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shopping List"
+        android:id="@+id/shoppinglist_btn"
+        android:layout_marginTop="103dp"
+        android:layout_below="@+id/scan_btn"
+        android:layout_alignRight="@+id/scan_btn"
+        android:layout_alignEnd="@+id/scan_btn"
+        android:layout_marginRight="13dp"
+        android:layout_marginEnd="13dp" />
 </RelativeLayout>

@@ -21,7 +21,11 @@ public class DBHelper extends SQLiteOpenHelper {
         // ContentValues 인스턴스 값이 하나도 없는 경우 행이 생성되지 않기 때문에 이런경우 null 처리해야 행이 생성되게 함
         db.execSQL("insert into item values(null, '우유', 01 , 02);");
     }
-    @Override // DB를 업그레이드해야 할 때 호출 됨.
+
+    // DB를 업그레이드해야 할 때 호출 됨.
+    // 버전이 업데이트 되었을 경우 DB를 다시 만들어 줍니다. DBVer = 1, 2, 3 이런식으로 수정하면
+    // 자동으로 기존의 TABLE을 삭제하고 새로운 TABLE을 만들어 줌
+    @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS ITEM");
         onCreate(db);
