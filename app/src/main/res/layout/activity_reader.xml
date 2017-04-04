@@ -10,33 +10,26 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.in_kwonpark.qrcode.ReaderActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="냉장고야 부탁해"
-        android:textSize = "30dp"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/textView2" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="쇼핑하기"
-        android:id="@+id/shopping_btn"
-        android:layout_alignBaseline="@+id/shoppinglist_btn"
-        android:layout_alignBottom="@+id/shoppinglist_btn"
-        android:layout_alignRight="@+id/itemlist_btn"
-        android:layout_alignEnd="@+id/itemlist_btn" />
+        android:text="쇼핑 목록"
+        android:id="@+id/shoppinglist_btn"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/scan_btn"
+        android:layout_alignLeft="@+id/scan_btn"
+        android:layout_alignStart="@+id/scan_btn"
+        android:textSize="60sp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="식자재 목록"
         android:id="@+id/itemlist_btn"
-        android:layout_marginRight="49dp"
-        android:layout_marginEnd="49dp"
-        android:layout_alignBaseline="@+id/scan_btn"
-        android:layout_alignBottom="@+id/scan_btn"
+        android:textSize="60sp"
+        android:layout_marginRight="138dp"
+        android:layout_marginEnd="138dp"
+        android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -45,20 +38,42 @@
         android:text="제품 입력"
         android:id="@+id/scan_btn"
         android:layout_height="wrap_content"
-        android:layout_marginTop="46dp"
-        android:layout_below="@+id/textView2"
-        android:layout_alignLeft="@+id/shoppinglist_btn"
-        android:layout_alignStart="@+id/shoppinglist_btn" />
+        android:layout_marginLeft="172dp"
+        android:layout_marginStart="172dp"
+        android:textSize="60sp"
+        android:layout_alignBaseline="@+id/itemlist_btn"
+        android:layout_alignBottom="@+id/itemlist_btn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColorHighlight="@color/zxing_custom_viewfinder_laser" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="쇼핑 목록"
-        android:id="@+id/shoppinglist_btn"
-        android:layout_marginRight="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_below="@+id/scan_btn"
-        android:layout_toLeftOf="@+id/shopping_btn"
-        android:layout_toStartOf="@+id/shopping_btn"
-        android:layout_marginTop="37dp" />
+        android:text="쇼핑하기"
+        android:id="@+id/shopping_btn"
+        android:textSize="60sp"
+        android:layout_alignBaseline="@+id/shoppinglist_btn"
+        android:layout_alignBottom="@+id/shoppinglist_btn"
+        android:layout_alignLeft="@+id/itemlist_btn"
+        android:layout_alignStart="@+id/itemlist_btn" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="냉장고야 부탁해"
+        android:id="@+id/textView2"
+        android:textSize="99sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_height="100dp"
+        android:layout_width="100dp"
+        android:background="@drawable/refrigerator"
+        android:id="@+id/imageView"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
